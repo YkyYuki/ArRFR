@@ -20,7 +20,7 @@ Use the pretrained `ArRFR_sna=0_st2=10_fna=6_ft2=4.pth` for reproducing experime
 ~~~python
 python test.py
 ~~~
-Results will be saved in `./results`.
+Results will be saved in `./results/`.
 ### Train Your Own Model
 Run the following command:
 ~~~python
