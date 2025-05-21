@@ -1,0 +1,34 @@
+dataset: H
+input_dir_Na: ./paired_dataset/Na
+input_dir_H: ./paired_dataset/T2W
+
+epoch: 50
+
+lr: 1e-4
+batch_size: 8
+step_size: 10
+gamma: 0.5
+
+encoder_spec:
+  name: edsr-baseline
+  args: 
+    n_feats: 128
+    n_resblocks: 16
+    no_upsampling: True
+
+imnet_spec:
+  name: mlp
+  args:
+    hidden_list: [128, 128, 128, 128]
+    out_dim: 1
+
+
+downsample_range: [1, 5]
+feature_w_na: 6
+feature_w_t2: 4
+style_w_t2: 10
+style_w_na: 0
+
+
+checkpoint_path: ./checkpoints/ArRFR/
+log_path: ./logs/ArRFR/
