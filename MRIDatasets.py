@@ -31,13 +31,13 @@ class CombinedDatasetT2ABS(Dataset):
 
             # if testing
             if self.mode == 'test':
-                if file_name_na.endswith(".npy") and "Na" in file_name_na and ("JYM" in file_name_na or "DYX"in file_name_na or "GR" in file_name_na): 
+                if file_name_na.endswith(".npy") and "Na" in file_name_na and ("ZAQ" in file_name_na or "ZJ"in file_name_na or "WJJ" in file_name_na or "ZP" in file_name_na or "SSJ" in file_name_na or "GR" in file_name_na): 
                     file_name_h = file_name_na.replace('Na', 'T2')
                     if file_name_h in os.listdir(self.config["input_dir_H"]):
                         data_pairs.append((file_name_na, file_name_h))
             # if training
             else:
-                if file_name_na.endswith("npy") and "Na" in file_name_na and "JYM" not in file_name_na and "DYX" not in file_name_na and "GR" not in file_name_na:
+                if file_name_na.endswith("npy") and "Na" in file_name_na and "ZAQ" not in file_name_na and "ZJ" not in file_name_na and "WJJ" not in file_name_na and "ZP" not in file_name_na and "SSJ" not in file_name_na and "GR" not in file_name_na:
                     file_name_h = file_name_na.replace('Na', 'T2')
                     if file_name_h in os.listdir(self.config["input_dir_H"]):
                         data_pairs.append((file_name_na, file_name_h))
